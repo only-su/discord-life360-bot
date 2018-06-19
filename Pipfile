@@ -4,8 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-discord = "*"
 requests = "*"
+"discord.py" = "*"
 
 [dev-packages]
 
