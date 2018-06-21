@@ -47,7 +47,7 @@ async def on_message(message):
                 else:
                     print(
                         'Error at localizating circle member, maybe his name is misspelled?')
-             else:
+            else:
                 await client.send_message(message.channel, "**Erro:**\n```Autenticação de login inválida```")
                 print('Login credentials are invalid')
         elif message.content.startswith('>liste') or message.content.startswith('>l') or message.content.startswith('liste'):
@@ -63,6 +63,7 @@ async def on_message(message):
         else:
             await client.send_message(message.channel, "**Erro:**\n```Comando Não reconhecido\nEscreva >ajude para uma lista dos comando disponíveis```")
             print('unknow command ' + message.content.split()[0])
+
 
 @client.event
 async def on_ready():
