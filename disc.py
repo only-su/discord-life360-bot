@@ -63,11 +63,12 @@ async def on_message(message):
                 print('Login credentials are invalid')
         else:
             await client.send_message(message.channel, "**Erro:**\n```Comando Não reconhecido\nEscreva >ajude para uma lista dos comando disponíveis```")
-            print('unknow command "' + message.content.split()[0] + '"')
+            print('Unknow command "' + message.content.split()[0] + '"')
 
 
 @client.event
 async def on_ready():
+    print('------')
     print('Logged in as')
     print(client.user.name)
     print(client.user.id)
