@@ -53,7 +53,7 @@ async def on_message(message):
             else:
                 await client.send_message(message.channel, "**Erro:**\n```Autenticação de login inválida```")
         else:
-            await client.send_message(message.channel, "**Erro:**\n```Comando Não reconhecido\nEscreva >help para uma lista dos comando disponíveis```")
+            await client.send_message(message.channel, "**Erro:**\n```Comando Não reconhecido\nEscreva >ajude para uma lista dos comando disponíveis```")
 
 
 @client.event
