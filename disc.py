@@ -70,6 +70,6 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('------')
-    await client.change_presence(game=discord.Game(name=">help"))
+    await client.change_presence(game=discord.Game(name="ajude, porra"))
 
 client.run(DISCORD_TOKEN)
