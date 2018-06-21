@@ -29,6 +29,7 @@ async def on_message(message):
             with open("help.txt") as h:
                 msg = h.read()
             await client.send_message(message.channel, msg)
+            print('Help message sent')
         elif message.content.startswith('>cade') or message.content.startswith('>c') or message.content.startswith('cade'):
             if autenticado:
                 msg = "**Erro:**\n```Membro não encontrado```"
@@ -41,8 +42,14 @@ async def on_message(message):
                         msg = "**Última localização de " + \
                             m['firstName'] + ":**\n" + results[1]
                 await client.send_message(message.channel, msg)
-            else:
+                if "Erro" not in msg:
+                    print('Localization message sent')
+                else:
+                    print(
+                        'Error at localizating circle member, maybe his name is misspelled?')
+             else:
                 await client.send_message(message.channel, "**Erro:**\n```Autenticação de login inválida```")
+                print('Login credentials are invalid')
         elif message.content.startswith('>liste') or message.content.startswith('>l') or message.content.startswith('liste'):
             if autenticado:
                 msg = "**Lista de membros em " + circle['name'] + ":**```"
@@ -52,9 +59,10 @@ async def on_message(message):
                 await client.send_message(message.channel, msg)
             else:
                 await client.send_message(message.channel, "**Erro:**\n```Autenticação de login inválida```")
+                print('Login credentials are invalid')
         else:
             await client.send_message(message.channel, "**Erro:**\n```Comando Não reconhecido\nEscreva >ajude para uma lista dos comando disponíveis```")
-
+            print('unknow command ' + message.content.split()[0])
 
 @client.event
 async def on_ready():
