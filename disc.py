@@ -24,7 +24,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('>') or message.content.endsswith(', porra'):
+    if message.content.startswith('>') or message.content.endswith(', porra'):
         if message.content.startswith('>ajude') or message.content.startswith('>a') or message.content.startswith('ajude'):
             with open("help.txt") as h:
                 msg = h.read()
