@@ -43,7 +43,7 @@ async def on_message(message):
                             m['firstName'] + ":**\n" + results[1]
                 await client.send_message(message.channel, msg)
                 if "Erro" not in msg:
-                    print('Localization message sent')
+                    print('Individual localization message sent')
                 else:
                     print(
                         'Error at localizating circle member, maybe his name is misspelled?')
@@ -57,12 +57,13 @@ async def on_message(message):
                     msg += "\n・" + m['firstName']
                 msg += "```"
                 await client.send_message(message.channel, msg)
+                print('Circle members list message sent')
             else:
                 await client.send_message(message.channel, "**Erro:**\n```Autenticação de login inválida```")
                 print('Login credentials are invalid')
         else:
             await client.send_message(message.channel, "**Erro:**\n```Comando Não reconhecido\nEscreva >ajude para uma lista dos comando disponíveis```")
-            print('unknow command ' + message.content.split()[0])
+            print('unknow command "' + message.content.split()[0] + '"')
 
 
 @client.event
