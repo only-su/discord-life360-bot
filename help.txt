@@ -1,5 +1,5 @@
 ﻿**====================== COMANDOS =======================**
-`>ache (a)` [nome] - Mostra a localização atual de um membro do círculo
-`>listar (l)` - Lista os membros do círculo
-`>help (h)` - Mostra essa mensagem
+`>ajude (a)` - Mostra essa mensagem
+`>liste (l)` - Lista os membros do círculo
+`>cade (c)` [nome] - Mostra a localização atual de um membro do círculo
 **=======================================================**
