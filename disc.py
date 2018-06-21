@@ -24,15 +24,16 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('>'):
-        if message.content.startswith('>help') or message.content.startswith('>h'):
+    if message.content.startswith('>') or message.content.endsswith(', porra'):
+        if message.content.startswith('>ajude') or message.content.startswith('>a'):
             with open("help.txt") as h:
                 msg = h.read()
             await client.send_message(message.channel, msg)
-        elif message.content.startswith('>ache') or message.content.startswith('>a'):
+        elif message.content.startswith('>cade') or message.content.startswith('>c'):
             if autenticado:
                 msg = "**Erro:**\n```Membro não encontrado```"
-                nome = " ".join(message.content.split()[1:]).lower()
+                nome = " ".join(message.content.split()[
+                                1:]).lower().split(",")[0]
                 for m in circle['members']:
                     if nome == m['firstName'].lower():
                         results = maps.retornarEnd(
@@ -42,7 +43,7 @@ async def on_message(message):
                 await client.send_message(message.channel, msg)
             else:
                 await client.send_message(message.channel, "**Erro:**\n```Autenticação de login inválida```")
-        elif message.content.startswith('>listar') or message.content.startswith('>l'):
+        elif message.content.startswith('>liste') or message.content.startswith('>l'):
             if autenticado:
                 msg = "**Lista de membros em " + circle['name'] + ":**```"
                 for m in circle['members']:
